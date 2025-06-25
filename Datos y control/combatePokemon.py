@@ -1,7 +1,11 @@
 import random
+import os
 
 vidaPikachu = 80
 vidaSquirtle = 90
+
+vidaPikachuInicial = 80
+vidaSquirtleInicial = 90
 
 while vidaPikachu > 0 and vidaSquirtle > 0:
     print("EL COMBATE HA COMENZADO")
@@ -26,8 +30,15 @@ while vidaPikachu > 0 and vidaSquirtle > 0:
     else:
         print("Ataque no válido")
 
-    print(f"Vida actual de Pikachu: {vidaPikachu}")
+    porcentajeVidaPikachu = int(vidaPikachu / vidaPikachuInicial * 100)
+    porcentajeVidaSquirtle = int(vidaSquirtle / vidaSquirtleInicial * 100)
+
+    print("Vida actual de Pikachu: {} {}".format(vidaPikachu, "#" * porcentajeVidaPikachu ))
     print(f"Vida actual de Squirtle: {vidaSquirtle}")
+
+
+    input("Enter para continuar...\n\n")
+    os.system("cls")
 
     ataqueAleatorio = random.randint(1, 2)
 
@@ -38,8 +49,15 @@ while vidaPikachu > 0 and vidaSquirtle > 0:
         print("Onda trueno realizada. Squirtle ha perdido 11 de vida")
         vidaSquirtle = vidaSquirtle - 11
 
+    porcentajeVidaPikachu = int(vidaPikachu / vidaPikachuInicial * 100)
+    porcentajeVidaSquirtle = int(vidaSquirtle / vidaSquirtleInicial * 100)
+
     print(f"Vida actual de Pikachu: {vidaPikachu}")
     print(f"Vida actual de Squirtle: {vidaSquirtle}")
+
+    input("Enter para continuar...\n\n")
+    os.system("cls")
+    
 
 if vidaPikachu <= 0:
     print("¡Squirtle ha ganado el combate!")
